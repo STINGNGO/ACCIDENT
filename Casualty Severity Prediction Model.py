@@ -1,5 +1,6 @@
 # read the dataset
 import pandas as pd
+import pickle
 
 data = pd.read_csv("Accident_Dataset_1_prepared.csv")
 print(data.head(3))
@@ -65,3 +66,5 @@ elif severity == 2:
     print("Casualty is Severe (%d)" % severity)
 elif severity == 3:
     print("Casualty Severity is Fatal (%d)" % severity)
+
+pickle.dump(severity, open("irl.pkl", "wb"))
